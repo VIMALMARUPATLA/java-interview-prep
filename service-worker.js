@@ -1,7 +1,7 @@
 const CACHE_NAME = 'java-interview-prep-v1';
 const urlsToCache = [
     '/',
-    '/index.html',
+    '/java-interview-prep/index.html',
     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'
