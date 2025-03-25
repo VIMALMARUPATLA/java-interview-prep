@@ -1413,13 +1413,13 @@ class InfoLogger extends Logger {
         });
 
         // Progress Tracker
-        function updateProgress() {
-            const totalQuestions = 215;
-            const viewedCount = viewedQuestions.size;
-            const percentage = Math.round((viewedCount / totalQuestions) * 100);
-            document.querySelector('.progress-fill').style.width = `${percentage}%`;
-            document.getElementById('progress-text').textContent = `${viewedCount}/${totalQuestions} questions viewed (${percentage}%)`;
-        }
+    function updateProgress() {
+        const totalQuestions = 255; // Updated from 215 to 255
+        const viewedCount = viewedQuestions.size;
+        const percentage = Math.round((viewedCount / totalQuestions) * 100);
+        document.querySelector('.progress-fill').style.width = `${percentage}%`;
+        document.getElementById('progress-text').textContent = `${viewedCount}/${totalQuestions} questions viewed (${percentage}%)`;
+    }
     </script>
 </body>
 </html>
