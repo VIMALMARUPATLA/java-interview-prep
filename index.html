@@ -6,7 +6,7 @@
     <meta name="description" content="Java Interview Prep with 215 Questions">
     <meta name="theme-color" content="#3498db">
     <title>Java Interview Prep - 215 Questions</title>
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/java-interview-prep/manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -1087,7 +1087,7 @@ class InfoLogger extends Logger {
         // PWA Service Worker Registration
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
+                navigator.serviceWorker.register('/java-interview-prep/service-worker.js')
                     .then(reg => console.log('Service Worker registered'))
                     .catch(err => console.log('Service Worker registration failed:', err));
             });
