@@ -1,0 +1,9 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
+}
+/* ... (rest of the CSS from index.html) */
