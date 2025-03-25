@@ -231,7 +231,7 @@
         <i class="fas fa-microphone"></i>
     </button>
     <div class="container">
-        <h1 id="main-title">Java Interview Prep - 215 Questions</h1>
+        <h1 id="main-title">Java Interview Prep - 255 Questions</h1>
         <input type="text" class="search-bar" placeholder="Search questions..." aria-label="Search questions" onkeyup="searchQuestions()">
 
         <!-- Progress Tracker -->
@@ -373,6 +373,220 @@
                 <div class="question">
                     <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">10. What is dependency injection in OOP? <i class="fas fa-chevron-down"></i></div>
                     <div class="answer">Providing dependencies to a class (e.g., via constructor), improves modularity (e.g., Spring @Autowired).</div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Java 8 -->
+        <div class="category">
+            <h2 onclick="toggleSection(this)" tabindex="0" aria-expanded="false" aria-controls="java8-questions">Java 8 (40 Questions) <i class="fas fa-chevron-down"></i></h2>
+            <div class="questions" id="java8-questions">
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">1. What is a functional interface, and why do we need it? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">A functional interface is an interface with exactly one abstract method (SAM - Single Abstract Method). It’s used as a target type for lambda expressions and method references in Java 8. We need it to enable functional programming by allowing methods to accept behavior (via lambda) rather than just data.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">2. What is the difference between Consumer and Supplier interfaces? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Consumer<T>: Accepts a single input (T) and performs an operation without returning a result (e.g., void accept(T t)). Supplier<T>: Takes no input and produces a result of type T (e.g., T get()). In short, Consumer consumes data, Supplier supplies it.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">3. What is CompletableFuture in Java 8? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">CompletableFuture is a class that enhances Java’s Future by supporting asynchronous programming with a fluent API. It allows chaining operations (e.g., thenApply, thenAccept) and handling results or exceptions once a computation completes, without blocking.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">4. Why are default and static methods introduced in Java 8? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Default methods: Allow adding new methods to interfaces without breaking existing implementations (backward compatibility). They provide a default implementation. Static methods: Enable utility methods in interfaces, reducing the need for companion utility classes (e.g., Comparator.comparing()).</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">5. When we have interfaces and abstract classes, why do we need functional interfaces? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Functional interfaces are specifically designed for lambda expressions and functional programming. Unlike regular interfaces or abstract classes, they enforce a single responsibility (one abstract method), making them ideal for passing behavior as data.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">6. Write a custom functional interface and call it using lambda expressions. <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">
+                        <pre><code class="language-java">
+        @FunctionalInterface
+        interface Calculator {
+            int calculate(int a, int b);
+        }
+        public class Main {
+            public static void main(String[] args) {
+                Calculator add = (a, b) -> a + b;
+                System.out.println(add.calculate(5, 3)); // Output: 8
+            }
+        }
+                        </code></pre>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">7. What is a lambda expression? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">A lambda expression is a concise way to represent an anonymous function (behavior) that can be passed around. It consists of parameters, an arrow (->), and a body (e.g., (x, y) -> x + y). It’s used with functional interfaces.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">8. Can we use lambda expressions with normal interfaces? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">No, lambda expressions can only be used with functional interfaces (those with one abstract method). Normal interfaces with multiple abstract methods don’t provide a clear target for lambda implementation.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">9. What is the try-with-resources feature? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Introduced in Java 7 and enhanced in Java 8, try-with-resources automatically closes resources (e.g., files, sockets) that implement AutoCloseable or Closeable. It simplifies resource management and reduces boilerplate code. Example:
+                        <pre><code class="language-java">
+        try (FileReader fr = new FileReader("file.txt")) {
+            // Use fr
+        } // Automatically closed
+                        </code></pre>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">10. Have you worked with Streams? Why do we need them? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Yes, Streams provide a functional way to process collections of data declaratively. We need them for concise, readable code, lazy evaluation, and easy parallelization (e.g., parallelStream()).</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">11. What are intermediate functions in Streams, and what do they return? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Intermediate operations (e.g., filter(), map(), sorted()) transform or filter a Stream and return another Stream. They are lazy and don’t execute until a terminal operation is called.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">12. What are terminal functions in Streams, and what do they return? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Terminal operations (e.g., collect(), forEach(), reduce()) trigger the Stream processing and produce a result (e.g., a collection, a single value) or a side effect. They return non-Stream types or void.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">13. Explain Java 8 enhancements in collections. <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Java 8 added methods like forEach(), stream(), parallelStream(), and removeIf() to the Collection interface. It also introduced default methods in Iterator and List (e.g., replaceAll()), enhancing functionality.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">14. What is Optional in Java 8? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Optional<T> is a container object that may or may not contain a non-null value. It helps avoid NullPointerException by forcing explicit null handling (e.g., isPresent(), orElse()).</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">15. Explain Stream API and its benefits. <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">The Stream API enables processing sequences of elements (e.g., collections) in a functional style. Benefits include: concise code, lazy evaluation, easy parallel processing, and pipeline operations (filter, map, etc.).</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">16. How does the new Date and Time API work in Java 8? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">The java.time package replaces older APIs (Date, Calendar) with immutable, thread-safe classes like LocalDate, LocalTime, LocalDateTime, and ZonedDateTime. It uses a fluent API and supports time zones, durations, and periods.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">17. How do lambda expressions improve code readability? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Lambda expressions reduce boilerplate code (e.g., anonymous classes) and focus on the core logic, making code shorter, clearer, and more expressive (e.g., (x) -> x * 2 vs. a full class).</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">18. Explain how method references work in Java 8. <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Method references (::) are a shorthand for lambda expressions that call an existing method. Types include: Static (Class::staticMethod, e.g., Math::max), Instance (object::instanceMethod), Constructor (Class::new). Example: list.forEach(System.out::println).</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">19. How does Java 8 handle parallel processing with Streams? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Java 8 provides parallelStream(), which splits a Stream into multiple threads using the Fork/Join framework. It simplifies parallelism but requires careful use to avoid overhead or thread-safety issues.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">20. What are the performance benefits of using Streams? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Streams offer lazy evaluation (processing only when needed), efficient pipelining (fusing operations), and parallel execution with parallelStream(), improving performance for large datasets.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">21. Explain the internal working of HashMap in Java 8. <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">In Java 8, HashMap uses a bucket array with linked lists or red-black trees (if a bucket exceeds 8 nodes). This improves performance for high-collision cases from O(n) to O(log n) for operations like get() and put().</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">22. How does Java 8 improve concurrency with CompletableFuture? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">CompletableFuture supports non-blocking, asynchronous tasks with callbacks (e.g., thenApply(), thenCombine()). It simplifies chaining operations and exception handling compared to Future.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">23. How does Java 8 handle functional-style programming? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Java 8 introduces lambdas, functional interfaces, Streams, and method references, enabling declarative, immutable, and behavior-passing paradigms typical of functional programming.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">24. What are the different functional interfaces in Java 8? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Key ones in java.util.function: Function<T, R> (Takes T, returns R), Consumer<T> (Takes T, returns void), Supplier<T> (Takes nothing, returns T), Predicate<T> (Takes T, returns boolean). Others: BiFunction, UnaryOperator, etc.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">25. How do you convert a list to a map using Streams? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">
+                        <pre><code class="language-java">
+        List<String> list = Arrays.asList("a", "b", "c");
+        Map<String, Integer> map = list.stream()
+            .collect(Collectors.toMap(s -> s, String::length));
+        // Output: {a=1, b=1, c=1}
+                        </code></pre>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">26. How do you filter and sort data using Streams? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">
+                        <pre><code class="language-java">
+        List<Integer> numbers = Arrays.asList(5, 2, 9, 1);
+        List<Integer> result = numbers.stream()
+            .filter(n -> n > 2)
+            .sorted()
+            .collect(Collectors.toList());
+        // Output: [5, 9]
+                        </code></pre>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">27. How does Java 8 handle multiple inheritance with default methods in interfaces? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">If a class implements multiple interfaces with conflicting default methods, it must override the method explicitly. The “class wins” rule applies: a method from a superclass takes precedence over interface defaults.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">28. What is the purpose of the Collectors class in Java 8? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Collectors provides utility methods to collect Stream results into collections (e.g., toList(), toMap()), perform grouping (groupingBy()), or compute aggregates (summingInt()).</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">29. What are the advantages of using Optional over null checks? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Forces explicit handling of nullability, reduces NullPointerException risks, improves code readability with methods like orElse(), ifPresent().</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">30. What are the different ways to iterate over a collection using Java 8 features? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">forEach(): list.forEach(System.out::println); Stream: list.stream().forEach(System.out::println); Iterator with lambda: iterator.forEachRemaining(System.out::println).</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">31. What is the difference between map() and flatMap() in Streams? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">map(): Transforms each element into a single value (1:1 mapping). flatMap(): Transforms each element into a Stream and flattens it into a single Stream (1:many mapping). Example: flatMap() unwraps nested collections.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">32. Explain the difference between findFirst() and findAny() in Streams. <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">findFirst(): Returns the first element in the Stream (deterministic). findAny(): Returns any element, useful in parallel Streams (non-deterministic).</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">33. How can you use reduce() in Java 8 Streams? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">
+                        <pre><code class="language-java">
+        List<Integer> numbers = Arrays.asList(1, 2, 3);
+        int sum = numbers.stream().reduce(0, Integer::sum); // Output: 6
+                        </code></pre>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">34. How does Java 8 improve garbage collection? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Java 8 replaced PermGen with Metaspace, which dynamically resizes and reduces memory errors. The G1 garbage collector also became the default, optimizing for low latency and large heaps.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">35. Explain the difference between anyMatch(), allMatch(), and noneMatch() in Streams. <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">anyMatch(): Returns true if at least one element matches a predicate. allMatch(): Returns true if all elements match. noneMatch(): Returns true if no elements match. All return boolean.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">36. How does Java 8 handle infinite Streams? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Infinite Streams are created with Stream.iterate() or Stream.generate(). They’re lazily evaluated, so operations like limit() or takeWhile() prevent infinite processing. Example: Stream.iterate(1, n -> n + 1).limit(5).</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">37. Explain the forEachOrdered() method in Streams. <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">forEachOrdered() ensures elements are processed in the encounter order, even in parallel Streams, unlike forEach(), which may process out of order in parallel.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">38. How do you sort a list of objects using Streams in Java 8? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">
+                        <pre><code class="language-java">
+        List<Person> people = ...;
+        List<Person> sorted = people.stream()
+            .sorted(Comparator.comparing(Person::getAge))
+            .collect(Collectors.toList());
+                        </code></pre>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">39. What is the peek() method in Streams used for? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">peek() is an intermediate operation that allows inspecting or debugging elements without modifying the Stream (e.g., stream.peek(System.out::println)). It returns the same Stream.</div>
+                </div>
+                <div class="question">
+                    <div class="question-header" onclick="toggleAnswer(this)" tabindex="0" aria-expanded="false">40. What are the key differences between Java 7 and Java 8? <i class="fas fa-chevron-down"></i></div>
+                    <div class="answer">Java 8 introduces lambdas, Streams, and functional interfaces; default/static methods in interfaces; Optional for null handling; new Date/Time API (java.time); Metaspace instead of PermGen; enhanced collections and concurrency (e.g., CompletableFuture).</div>
                 </div>
             </div>
         </div>
@@ -1199,13 +1413,13 @@ class InfoLogger extends Logger {
         });
 
         // Progress Tracker
-        function updateProgress() {
-            const totalQuestions = 215;
-            const viewedCount = viewedQuestions.size;
-            const percentage = Math.round((viewedCount / totalQuestions) * 100);
-            document.querySelector('.progress-fill').style.width = `${percentage}%`;
-            document.getElementById('progress-text').textContent = `${viewedCount}/${totalQuestions} questions viewed (${percentage}%)`;
-        }
+    function updateProgress() {
+        const totalQuestions = 255; // Updated from 215 to 255
+        const viewedCount = viewedQuestions.size;
+        const percentage = Math.round((viewedCount / totalQuestions) * 100);
+        document.querySelector('.progress-fill').style.width = `${percentage}%`;
+        document.getElementById('progress-text').textContent = `${viewedCount}/${totalQuestions} questions viewed (${percentage}%)`;
+    }
     </script>
 </body>
 </html>
